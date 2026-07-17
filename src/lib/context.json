@@ -44,19 +44,19 @@
   "promotions":[
     {
       "titleCard": "Camaras para empresas",
-      "imgSrc": "/../src/assets/001-img-card.avif",
+      "imgSrc": "/card_camera_n001.avif",
       "imgAlt": "Camaras de seguridad para empresas",
       "linkHref": "Me%20interesa%20las%20cámaras%20para%20mi%20empresa!."
     },
     {
       "titleCard": "Camaras para el hogar",
-      "imgSrc": "/../src/assets/002-img-card.avif",
+      "imgSrc": "/card_personal_n002.avif",
       "imgAlt": "Camaras de seguridad para empresas",
       "linkHref": "Me%20interesa%20las%20cámaras%20para%20el%20hogar!."
     },
     {
       "titleCard": "Vigilancia las 24/7",
-      "imgSrc": "/../src/assets/003-img-card.avif",
+      "imgSrc": "/card_security_n003.avif",
       "imgAlt": "Camaras de seguridad para empresas",
       "linkHref": "Me%20interesa%20los%20servicios%20de%20vigilancia!."
     }

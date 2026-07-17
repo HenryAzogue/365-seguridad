@@ -1,10 +1,13 @@
 ---
 import SpanText from "./SpanText.astro";
 import ComSubTitle from "./ComSubTitle.astro";
-import { services } from "@lib/context.json";
 import ButtonCta from "./ButtonCta.astro";
+// import { services } from "@lib/context.json";
 import { Image } from "astro:assets";
 import {NUMBER_BOSS} from "astro:env/client";
+import { getCollection } from "astro:content";
+
+const servicesOptions = await getCollection('services')
 
 ---
 
@@ -12,6 +15,69 @@ import {NUMBER_BOSS} from "astro:env/client";
   <SpanText spanText="Instalación de:" spanColor={true} />
   <div class="option">
     {
+      servicesOptions.map(service =>(
+         <details>
+            <summary>
+              <ComSubTitle subTitle={service.title} />
+            </summary>
+            <div class="detail-box">
+              <Image
+                src={service.img}
+                width={275}
+                height={100}
+                loading={"lazy"}
+                decoding={"async"}
+                alt={service.imgDescription}
+                class="detail-image"
+              />
+              <div class="box-content">
+                <p class="detail-description">
+                  {service.description}
+                </p>
+                <ButtonCta 
+                  href={`https://wa.me/${NUMBER_BOSS}?text=${service.urlPath}`}
+                  messageBtn="Más Detalles"
+                />
+              </div>
+            </div>
+          </details>
+      ))
+    }
+    <!-- {
+      servicesOptions.map(serviceOption =>{
+        const {slug, data} = serviceOption
+        const { title, img, imgDescription, description, urlPath} = data
+        return(
+          <details>
+            <summary>
+              <ComSubTitle subTitle={title} />
+            </summary>
+            <div class="detail-box">
+              <Image
+                src={img}
+                width={275}
+                height={100}
+                loading={"lazy"}
+                decoding={"async"}
+                alt={imgDescription}
+                class="detail-image"
+              />
+              <div class="box-content">
+                <p class="detail-description">
+                  {description}
+                </p>
+                <ButtonCta 
+                  href={`https://wa.me/${NUMBER_BOSS}?text=${urlPath}`}
+                  messageBtn="Más Detalles"
+                />
+              </div>
+            </div>
+          </details>
+        )
+      })
+    } -->
+
+    <!-- {
       services.map(
         ({
           title,
@@ -47,7 +113,7 @@ import {NUMBER_BOSS} from "astro:env/client";
           </details>
         ),
       )
-    }
+    } -->
   </div>
 </section>
 
