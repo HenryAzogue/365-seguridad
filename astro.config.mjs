@@ -1,8 +1,14 @@
-// @ts-check
+// @ts-nocheck
 import { defineConfig, envField } from 'astro/config';
+import vercel from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
 export default defineConfig({
+  adapter: vercel({
+    webAnalytics:{
+      enabled: true,
+    }
+  }),
   env:{
     schema:{
       NUMBER_BOSS: envField.number({
