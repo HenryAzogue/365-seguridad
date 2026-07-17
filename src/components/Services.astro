@@ -1,0 +1,161 @@
+---
+import SpanText from "./SpanText.astro";
+import ComSubTitle from "./ComSubTitle.astro";
+import { services } from "@lib/context.json";
+import ButtonCta from "./ButtonCta.astro";
+import { Image } from "astro:assets";
+import {NUMBER_BOSS} from "astro:env/client";
+
+---
+
+<section id="servicios" class="services">
+  <SpanText spanText="Instalación de:" spanColor={true} />
+  <div class="option">
+    {
+      services.map(
+        ({
+          title,
+          imagen,
+          imgDescription,
+          description,
+          urlDescription,
+        }) => (
+          <details>
+            <summary>
+              <ComSubTitle subTitle={title} />
+            </summary>
+            <div class="detail-box">
+              <Image
+                src={imagen}
+                width={275}
+                height={100}
+                loading={"lazy"}
+                decoding={"async"}
+                alt={imgDescription}
+                class="detail-image"
+              />
+              <div class="box-content">
+                <p class="detail-description">
+                  {description}
+                </p>
+                <ButtonCta 
+                  href={`https://wa.me/${NUMBER_BOSS}?text=${urlDescription}`}
+                  messageBtn="Más Detalles"
+                />
+              </div>
+            </div>
+          </details>
+        ),
+      )
+    }
+  </div>
+</section>
+
+<style>
+  .services {
+    margin: 64px auto;
+    max-width: 1100px;
+    padding-block: 4rem;
+    padding: 0 1rem;
+  }
+  details{
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 5% cover 50%;
+  }
+  .detail-box {
+    padding-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+
+
+    & .box-content {
+      max-width: 615px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 1rem;
+    }
+  }
+  summary {
+    list-style-type: none;
+    color: var(--color-span-text2);
+  }
+
+  summary {
+    position: relative;
+  }
+  summary::marker {
+    content: none;
+  }
+  summary::before,
+  summary::after {
+    content: "";
+  }
+  summary::before,
+  summary::after {
+    width: 0.75em;
+    height: 0;
+    border-bottom: 2px solid;
+    position: absolute;
+    top: calc(50% - 1px);
+    right: 0;
+    transform: translateY(-50%);
+  }
+  summary::after {
+    transform: rotate(90deg);
+    transform-origin: 50% 50%;
+  }
+  [open] summary::after {
+    transform: rotate(0deg);
+  }
+
+  details {
+    padding: 1rem;
+  }
+  summary {
+    cursor: pointer;
+  }
+
+  .detail-image {
+    border-radius: var(--border-radius);
+    object-fit: cover;
+    width: 275px;
+    height: 120px;
+  }
+  .detail-description {
+    color: var(--color-span-text2);
+  }
+
+     @keyframes reveal{
+    from{
+      opacity: 0;
+      translate: 0 90px;
+    }
+    to{
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+
+  @media (width <= 64em) {
+  }
+  @media (width <= 56em) {
+  }
+  @media (width <= 42em) {
+    .detail-box {
+      flex-direction: column;
+
+      & .box-content {
+        justify-content: center;
+        align-items: center;
+
+        & .detail-description{
+          text-align: center;
+        }
+      }
+    }
+  }
+</style>

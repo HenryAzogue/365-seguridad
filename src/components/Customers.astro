@@ -1,0 +1,208 @@
+---
+import { Image } from "astro:assets";
+import SpanText from "./SpanText.astro";
+import myImage1 from "../../src/assets/cl-alcampo.webp";
+import myImage2 from "../../src/assets/cl-cambai.webp";
+import myImage3 from "../../src/assets/cl-coamo.webp";
+import myImage4 from "../../src/assets/cl-panificadora-ambato.webp";
+import myImage5 from "../../src/assets/cl-sana-sana.webp";
+import myImage6 from "../../src/assets/cl-western-union.webp";
+---
+
+<div class="customer">
+  <div class="customer-box">
+    <SpanText spanText="Clientes" spanColor={false} />
+    <div class="scroller">
+      <ul class="tag-list scroller__inner">
+        <li class="li-content">
+          <Image
+            src={myImage1}
+            loading="lazy"
+            decoding="async"
+            alt="cliente alcampo"
+            class="content-img"
+          />
+        </li>
+        <li class="li-content">
+          <Image
+            src={myImage2}
+            loading="lazy"
+            decoding="async"
+            alt="cliente cambai"
+            class="content-img"
+          />
+        </li>
+        <li class="li-content">
+          <Image
+            src={myImage3}
+            loading="lazy"
+            decoding="async"
+            alt="cliente coamo"
+            class="content-img"
+          />
+        </li>
+        <li class="li-content">
+          <Image
+            src={myImage4}
+            loading="lazy"
+            decoding="async"
+            alt="cliente panificadora ambato"
+            class="content-img"
+          />
+        </li>
+        <li class="li-content">
+          <Image
+            src={myImage5}
+            loading="lazy"
+            decoding="async"
+            alt="cliente sana sana"
+            class="content-img"
+          />
+        </li>
+        <li class="li-content">
+          <Image
+            src={myImage6}
+            loading="lazy"
+            decoding="async"
+            alt="cliente western union"
+            class="content-img"
+          />
+        </li>
+        <li class="li-content">
+          <Image
+            src={myImage1}
+            loading="lazy"
+            decoding="async"
+            alt="cliente alcampo"
+            class="content-img"
+          />
+        </li>
+        <li class="li-content">
+          <Image
+            src={myImage2}
+            loading="lazy"
+            decoding="async"
+            alt="cliente cambai"
+            class="content-img"
+          />
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<style>
+  .customer {
+    background-color: var(--color-back);
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+
+    .customer-box {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+  }
+
+  .scroller {
+    max-width: 1100px;
+    margin-top: 16px;
+  }
+
+  .scroller__inner {
+    padding-block: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .tag-list {
+    padding-inline: 0;
+  }
+  .li-content {
+    border: 1px solid var(--color-border-box);
+    border-radius: 8px;
+    width: 175px;
+    height: 150px;
+
+    display: grid;
+    place-content: center;
+  }
+  .content-img {
+    width: 150px;
+    height: auto;
+  }
+
+  .scroller[data-animated="true"] {
+    overflow: hidden;
+    -webkit-mask: linear-gradient(
+      90deg,
+      transparent,
+      white 20%,
+      white 80%,
+      transparent
+    );
+    mask: linear-gradient(
+      90deg,
+      transparent,
+      white 20%,
+      white 80%,
+      transparent
+    );
+  }
+  .scroller[data-animated="true"] .scroller__inner {
+    width: max-content;
+    flex-wrap: nowrap;
+    animation: scroll 48s linear infinite;
+  }
+
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
+</style>
+
+<script>
+  // 1. Seleccionamos la lista y la forzamos a ser un array de HTMLElement
+  const scrollers = Array.from(
+    document.querySelectorAll(".scroller"),
+  ) as HTMLElement[];
+
+  if (
+    !window.matchMedia("(prefers-reduced-motion: reduce)")
+      .matches
+  ) {
+    addAnimation();
+  }
+
+  function addAnimation() {
+    scrollers.forEach((scroller) => {
+      scroller.setAttribute("data-animated", "true");
+
+      // 2. Buscamos el hijo y verificamos que exista antes de usarlo
+      const scrollerInner = scroller.querySelector(
+        ".scroller__inner",
+      ) as HTMLElement;
+
+      if (!scrollerInner) return;
+
+      // 3. Convertimos HTMLCollection a Array para iterar
+      const scrollerContent = Array.from(
+        scrollerInner.children,
+      );
+
+      scrollerContent.forEach((item) => {
+        // 4. cloneNode devuelve Node, necesitamos castear a HTMLElement
+        const duplicateItem = item.cloneNode(
+          true,
+        ) as HTMLElement;
+
+        // Verificación de seguridad opcional pero recomendada
+        if (duplicateItem) {
+          duplicateItem.setAttribute("aria-hidden", "true");
+          scrollerInner.appendChild(duplicateItem);
+        }
+      });
+    });
+  }
+</script>

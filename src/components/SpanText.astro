@@ -1,0 +1,27 @@
+---
+interface Props {
+  spanText: string;
+  spanColor: boolean;
+}
+
+const { spanText, spanColor } = Astro.props;
+---
+
+<span class={`span-title ${spanColor ? "spanColor" : ""}`}
+  >+ {spanText}</span
+>
+
+<style>
+  .span-title {
+    color: var(--color-span-text);
+    font-family: var(--font-normal);
+    font-size: var(--fs-span-text);
+    font-weight: 500;
+  }
+  .spanColor {
+    color: var(--color-span-text2);
+    font-family: var(--font-normal);
+    font-size: var(--fs-span-text);
+    font-weight: 500;
+  }
+</style>

@@ -1,0 +1,17 @@
+---
+export interface Props {
+  subTitle: string;
+}
+
+const { subTitle } = Astro.props;
+---
+
+<h2 class="subtitle">{subTitle}</h2>
+
+<style>
+  .subtitle {
+    color: var(--color-back);
+    font-family: var(--font-principal);
+    font-size: var(--fs-subtitle);
+  }
+</style>

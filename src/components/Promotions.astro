@@ -1,0 +1,145 @@
+---
+import { Image } from "astro:assets";
+import { promotions } from "@lib/context.json";
+import { NUMBER_BOSS } from "astro:env/client";
+import Logo from "@icons/Logo.astro";
+import SpanText from "./SpanText.astro";
+
+---
+<section id="promociones" class="promotion">
+  <div class="promotion-conten">
+
+    <SpanText spanColor={true} spanText="Promociones"/>
+    <h2 class="promotion-subtitle">Ofertas limitadas</h2>
+    <ul class="promotion-box">
+      {
+        promotions.map(
+          ({
+            titleCard,
+            imgSrc,
+            imgAlt,
+            linkHref
+          })=>(
+            <li class="box-card box-card-n1">
+              <a
+                href={`https://wa.me/${NUMBER_BOSS}?text=${linkHref}`}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <Image 
+                  src={imgSrc}
+                  class="card-img"
+                  width={353}
+                  height={400}
+                  loading={"lazy"}
+                  decoding={"async"}
+                  alt={imgAlt}
+                  />
+                <div class="card-logo">
+                  <Logo />
+                </div>  
+                <h3 class="card-title">{titleCard}</h3>
+              </a>
+            </li>
+          ), 
+        )
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .promotion{
+    background: var(--color-special);
+  }
+  .promotion-conten{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem  1rem;
+  }
+  .promotion-subtitle{
+    color: var(--color-back);
+    font-size: var(--fs-subtitle);
+    font-family: var(--fs-principal);
+    margin: 1rem 0;
+  }
+  .promotion-box{
+    --value-card: clamp(17.1875rem, 8.2292vw + 15.5417rem, 22.125rem);
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: var(--value-card);
+    grid-auto-rows: 400px;
+    gap: 1rem;
+    overflow-x: auto;
+    overscroll-behavior-inline:contain;
+    scroll-snap-type: x mandatory;
+
+
+    & li{
+      scroll-snap-align: center;
+      cursor: pointer;
+      margin-bottom: 1rem;
+      border-radius: var(--border-radius);
+    }
+  }
+  .box-card{
+    position: relative;
+    padding: 5px 0;
+    transition: scale 0.3s ease-in-out;
+    scale: 1;
+  }
+  .box-card:hover{
+    scale: 1.01;
+  }
+
+  ::-webkit-scrollbar{
+    height: 10px;
+    margin-top: 1rem;
+  }
+  ::-webkit-scrollbar-track{
+    background-color: var(--color-span-text2);
+    border-radius: 25px;
+  }
+  ::-webkit-scrollbar-thumb{
+    background-color: var(--color-principal-50);
+    border:1px solid var(--color-back);
+    border-radius: 25px;
+    
+  }
+  .card-img{
+    object-fit: cover;
+    border: solid 1px var(--color-span-text2);
+    border-radius: 16px;
+    width: 354px;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    position: absolute;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .card-img:hover{
+    opacity: 0.9;
+  }
+
+  .card-logo{
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    right: 0px;
+    bottom: 0px;
+    width: 52px;
+    height: 52px;
+    z-index: 1;
+  }
+  .card-title{
+    color: var(--color-back);
+    font-size: var(--fs-text);
+    font-family: var(--font-normal);
+    text-transform: uppercase;
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+    z-index: 1;
+  }
+</style>

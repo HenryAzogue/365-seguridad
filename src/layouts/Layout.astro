@@ -1,23 +1,189 @@
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <meta name="language" content="es" />
+    <meta
+      name="description"
+      content="Somos una empresa especializada en brindar soluciones integrales de seguridad para tu negocio y hogar. Ofrecemos sistemas de protección personalizados, además de servicios de internet y televisión de alta calidad."
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/logo.svg"
+    />
+    <link rel="icon" href="/logo.ico" />
+    <meta name="robots" content="index, follow" />
+    <meta
+      property="og:site_name"
+      content="365 Internet - TV & Seguridad"
+    />
+    <meta
+      property="og:title"
+      content="365 Internet - TV & Seguridad"
+    />
+    <meta
+      property="og:description"
+      content="Somos una empresa especializada en brindar soluciones integrales de seguridad para tu negocio y hogar. Ofrecemos sistemas de protección personalizados, además de servicios de internet y televisión de alta calidad."
+    />
+    <!-- <meta property="og:image" content="/logo.svg" /> -->
+    <meta property="og:title" content="website" />
+    <meta
+      name="twitter:card"
+      content="cummary_large_image"
+    />
+    <meta
+      name="twitter:title"
+      content="365 Internet - TV & Seguridad"
+    />
+    <meta
+      name="twitter:description"
+      content="Somos una empresa especializada en brindar soluciones integrales de seguridad para tu negocio y hogar. Ofrecemos sistemas de protección personalizados, además de servicios de internet y televisión de alta calidad."
+    />
+    <!-- <meta name="twitter:image" content="/logo.svg" /> -->
+    <title>365 Internet - TV & Seguridad</title>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+<style is:global>
+  @font-face {
+    font-family: Poppins Variable;
+    font-style: normal;
+    font-display: swap;
+    font-weight: 100 900;
+    src: url(/font/Poppins-VariableFont.woff2)
+      format("woff2-variations");
+  }
+
+  :root {
+    --color-text: #333333;
+    --color-span-text: #333333d9;
+    --color-principal: #0b4dd3;
+    --color-principal-50: #0055ffab;
+    --color-secondary: #7ed957;
+    --color-special: #ff4d4c;
+    --color-back: #fff;
+    --color-border-box: rgba(51, 51, 51, 0.35);
+    --color-span-text2: rgba(255, 255, 255, 0.85);
+
+    /*14.08 - 15.04 */
+    --fs-span-text: clamp(
+      0.88rem,
+      0.1vi + 0.85rem,
+      0.94rem
+    );
+
+    /*17 - 24*/
+    --fs-text: clamp(1.06rem, 0.73vi + 0.92rem, 1.5rem);
+    
+    /*18-24 */
+    --fs-card-title: clamp(1.1rem, .25vw + 1.05rem, 1.25rem);
+
+    /*18 -48*/
+    --fs-bento-title: clamp(1.125rem, 0.2727rem + 4.2614vw, 3rem);
+
+    /*24 - 48*/ 
+    --fs-subtitle: clamp(1.5rem, 2.5vi + 1rem, 3rem);
+
+    /*28 - 64*/
+    --fs-big-title: clamp(1.75rem, 3.75vi + 1rem, 4rem);
+
+    --border-radius: 16px;
+
+    --font-principal: Poppins Variable, sans-serif;
+    --font-normal:
+      Roboto, system-ui, -apple-system, sans-serif;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    vertical-align: baseline;
+  }
+
+  img,
+  picture,
+  video,
+  iframe,
+  figure {
+    max-width: 100%;
+    width: 100%;
+    display: block;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+  }
+
+  p a {
+    display: inline;
+  }
+
+  li {
+    list-style-type: none;
+    list-style: none;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  a,
+  strong,
+  blockquote,
+  i,
+  b,
+  u,
+  em {
+    font-size: 1em;
+    font-weight: inherit;
+    font-style: inherit;
+    text-decoration: none;
+    color: inherit;
+    margin: 0;
+  }
+
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: "";
+    content: none;
+  }
+
+  svg {
+    width: 100%;
+    display: block;
+    fill: currentColor;
+  }
+
+  body {
+    font-family:
+      var(--font-normal),
+      sans serif;
+    background-color: var(--color-principal);
+    color: light dark;
+    font-size: 100%;
+  }
 </style>

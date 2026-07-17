@@ -1,0 +1,112 @@
+---
+import Logo from "@icons/Logo.astro";
+import ButtonCta from "./ButtonCta.astro";
+---
+
+<section id="contactame" class="contact">
+	<div class="contact-logo">
+		<div class="logo-icon">
+			<Logo />
+		</div>
+		<h2 class="logo-title">
+			Internet, tv <br />365 <br />seguridad
+		</h2>
+	</div>
+	<div class="contact-details">
+		<div class="details-info">
+			<p class="info-p">
+				Para garantizar un servicio de calidad, realizamos
+				visitas técnicas sin costo. Atendemos proyectos
+				dentro y fuera de la ciudad.
+			</p>
+			<span class="info-s">Será un gusto atenderte:</span>
+			<a class="infro-g" href="mailto:contacto@365seguridad.com">contacto@365seguridad.com</a>
+		</div>
+		<div class="ditails-cta">
+			<span class="info-s">Escribenos al:</span>
+			<ButtonCta 
+				href="https://wa.me/593969026437?text=Estoy%20interesado%20en%20conocer%20más%20detalles%20de%20sus%20servicios."
+				messageBtn="WhatsApp"/>
+		</div>
+	</div>
+</section>
+<style>
+	.contact {
+		max-width: 1100px;
+		margin: 4rem auto;
+		padding: 0 1rem;
+		color: var(--color-back);
+	}
+	.contact-logo {
+		--gap-logo: clamp(1rem, 1.6667vw + 0.6667rem, 2rem);
+		display: flex;
+		gap: var(--gap-logo);
+	}
+	.logo-icon {
+		width: clamp(4.6875rem, 13.0208vw + 2.0833rem, 12.5rem);
+		height: clamp(
+			4.6875rem,
+			13.0208vw + 2.0833rem,
+			12.5rem
+		);
+	}
+	.logo-title {
+		font-family: var(--font-principal);
+		font-size: var(--fs-subtitle);
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+	.contact-details {
+		margin-top: 2rem;
+		display: flex;
+		flex-flow: wrap;
+		justify-content: space-between;
+		gap: 1rem;
+	}
+	.details-info {
+	}
+	.info-p {
+		color: var(--color-span-text2);
+		font-size: var(--fs-text);
+		margin-bottom: 1rem;
+		max-width: 700px;
+	}
+	.info-s {
+		color: var(--color-span-text2);
+		font-size: var(--fs-span-text);
+		padding-top: 1rem;
+		padding-bottom: 7px;
+	}
+	.infro-g {
+		font-size: var(--fs-text);
+		margin-top: 7px;
+	}
+	.ditails-cta {
+		display: flex;
+		flex-direction: column;
+		gap: 7px;
+	}
+	@media (width <= 64em) {
+	}
+	@media (width <= 56em) {
+		.contact-logo {
+			justify-content: center;
+		}
+		.contact-details {
+			justify-content: center;
+			align-items: center;
+			margin-top: 1rem;
+		}
+		.details-info {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			& .info-p {
+				text-align: center;
+			}
+		}
+	}
+	@media (width <= 42em) {
+	}
+</style>

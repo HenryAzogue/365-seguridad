@@ -1,0 +1,145 @@
+---
+import ButtonCta from "./ButtonNormal.astro";
+---
+
+<section id="inicio" class="section-hero">
+  <div class="hero-wrapping">
+    <div class="hero-content">
+      <h1 class="content-title">
+        <span class="title-number">365</span>
+        <span class="title-content">
+          <span>Iinternet, TV</span>
+          <span>+ Seguridad</span>
+        </span>
+      </h1>
+      <h2 class="content-subtitle">
+        <span>Instalaciones de:</span>
+        <span>
+          Fibra Óptica, <br /> Televisión por Cable
+        </span>
+      </h2>
+    </div>
+    <div class="hero-content">
+      <div class="content-paragraph">
+        <p class="paragraph-box">
+          Protegemos tu negocio y hogar
+          <span class="box-text">
+            Soluciones integrales de seguridad
+            personalizadas, acompañadas de servicios de
+            internet y televisión de alta calidad.
+          </span>
+        </p>
+      </div>
+      <ButtonCta 
+        href="https://www.facebook.com/people/365-Televisi%C3%B3n-y-Seguridad-Electr%C3%B3nica/61554364868800/" 
+        messageBtn="Más Información"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-hero {
+    padding: 5px;
+    background-color: var(--color-principal);
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  .hero-wrapping {
+    border-radius: var(--border-radius);
+    background-image: url(../assets/img-section-hero.avif);
+    background-size: cover;
+    background-position: center;
+    height: 632px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 117px;
+  }
+  .hero-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 10px;
+    width: min(1100px, 100%);
+    margin: 0 auto;
+  }
+  .content-title {
+    color: var(--color-back);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .title-number {
+    border: 6px solid var(--color-back);
+    border-radius: 50%;
+    padding: 1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: var(--font-normal);
+    font-size: clamp(1.75rem, 1.25vi + 1.5rem, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -2px;
+    width: clamp(3.75rem, 3.13vi + 3.13rem, 5.63rem);
+    height: clamp(3.75rem, 3.13vi + 3.13rem, 5.63rem);
+  }
+  .title-content {
+    font-family: var(--font-principal);
+    font-size: var(--fs-big-title);
+    font-weight: 700;
+    text-transform: uppercase;
+
+    display: flex;
+    flex-direction: column;
+  }
+  .content-subtitle {
+    color: var(--color-back);
+    font-family: var(--font-normal);
+    font-size: var(--fs-text);
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+  }
+  .content-paragraph {
+    color: var(--color-back);
+    font-family: var(--font-normal);
+    font-size: var(--fs-text);
+    font-weight: 500;
+    width: min(600px, 100%);
+  }
+  .paragraph-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .box-text {
+    padding-top: 5px;
+    text-wrap: pretty;
+  }
+  @media (width <= 768px) {
+    .hero-content {
+      flex-direction: column;
+      gap: 2rem;
+
+      br {
+        display: none;
+      }
+
+      & .content-subtitle {
+        text-align: center;
+      }
+    }
+    .content-paragraph {
+      & .box-text {
+        text-align: center;
+      }
+    }
+  }
+</style>

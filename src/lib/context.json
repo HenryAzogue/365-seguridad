@@ -1,0 +1,64 @@
+{
+  "services": [
+    {
+      "title": "Camaras de seguridad",
+      "imagen": "/../src/assets/0a1-img.avif",
+      "imgDescription": "Imagen del una camara de seguridad",
+      "description": "Para tu hogar, tu negocio o espacios recreativos y cuenta con facil acceso al monitore que va desde tu móvil o computador.",
+      "urlDescription": "Me%20ayudas%20con%20los%20modelos%20de%20Cámaras%20para%20seguridad!.",
+      "isOpen":"open"
+    },
+    {
+      "title": "Alarmas comunitarias",
+      "imagen": "/../src/assets/0a2-img.avif",
+      "imgDescription": "Imagen de una alarma comunitaria",
+      "description": "Un sistema que te permite alertar y prevenir ante cualquier robo o incidente que que este pasando en espacios seguros para ti y los tuyos.",
+      "urlDescription": "Me%20ayudas%20con%20más%20información%20de%20las%20Alarmas%20Comunitarias.",
+      "isOpen":""
+    },
+    {
+      "title": "Cercos Eléctricos",
+      "imagen": "/../src/assets/0a3-img.avif",
+      "imgDescription": "Imagen de casa con cercos eléctricos",
+      "description": "Instalación de cercos eléctricos para tu casa o cualquier zona donde no te falte la confianza de estar tranquilo y seguro con la familia.",
+      "urlDescription": "Me%20ayudas%20con%20la%20información%20de%20instalación%20de%20los%20Cercos%20Electrónicos!.",
+      "isOpen":""
+    },
+    {
+      "title": "Televisión por Cable",
+      "imagen": "/../src/assets/0a4-img.avif",
+      "imgDescription": "Imagen del los canales de televisión por cable",
+      "description": "Contamos con el servicio de TV por cable con más 65 canales que abarca entretenimiento, deporte, noticias, documentales y mucho más.",
+      "urlDescription": "Me%20ayudas%20con%20los%20planes%20de%20TV%20por%20cable!.",
+      "isOpen":""
+    },
+    {
+      "title": "Internet Fibra Óptica",
+      "imagen": "/../src/assets/0a5-img.avif",
+      "imgDescription": "Imagen del Internet Fibra Óptica",
+      "description": "Navega por la red con el proveedor de internet 100% de fibra óptica que ofrece conexiones de hasta 5000 Mbps para hogares y empresas.",
+      "urlDescription": "Me%20ayudas%20con%20los%20planes%20de%20Internet!.",
+      "isOpen":""
+    }
+  ],
+  "promotions":[
+    {
+      "titleCard": "Camaras para empresas",
+      "imgSrc": "/../src/assets/001-img-card.avif",
+      "imgAlt": "Camaras de seguridad para empresas",
+      "linkHref": "Me%20interesa%20las%20cámaras%20para%20mi%20empresa!."
+    },
+    {
+      "titleCard": "Camaras para el hogar",
+      "imgSrc": "/../src/assets/002-img-card.avif",
+      "imgAlt": "Camaras de seguridad para empresas",
+      "linkHref": "Me%20interesa%20las%20cámaras%20para%20el%20hogar!."
+    },
+    {
+      "titleCard": "Vigilancia las 24/7",
+      "imgSrc": "/../src/assets/003-img-card.avif",
+      "imgAlt": "Camaras de seguridad para empresas",
+      "linkHref": "Me%20interesa%20los%20servicios%20de%20vigilancia!."
+    }
+  ]
+}
