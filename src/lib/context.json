@@ -2,7 +2,7 @@
   "services": [
     {
       "title": "Camaras de seguridad",
-      "imagen": "/../src/assets/0a1-img.avif",
+      "imagen": "/service_n001.avif",
       "imgDescription": "Imagen del una camara de seguridad",
       "description": "Para tu hogar, tu negocio o espacios recreativos y cuenta con facil acceso al monitore que va desde tu móvil o computador.",
       "urlDescription": "Me%20ayudas%20con%20los%20modelos%20de%20Cámaras%20para%20seguridad!.",
@@ -10,7 +10,7 @@
     },
     {
       "title": "Alarmas comunitarias",
-      "imagen": "/../src/assets/0a2-img.avif",
+      "imagen": "/service_n002.avif",
       "imgDescription": "Imagen de una alarma comunitaria",
       "description": "Un sistema que te permite alertar y prevenir ante cualquier robo o incidente que que este pasando en espacios seguros para ti y los tuyos.",
       "urlDescription": "Me%20ayudas%20con%20más%20información%20de%20las%20Alarmas%20Comunitarias.",
@@ -18,7 +18,7 @@
     },
     {
       "title": "Cercos Eléctricos",
-      "imagen": "/../src/assets/0a3-img.avif",
+      "imagen": "/service_n003.avif",
       "imgDescription": "Imagen de casa con cercos eléctricos",
       "description": "Instalación de cercos eléctricos para tu casa o cualquier zona donde no te falte la confianza de estar tranquilo y seguro con la familia.",
       "urlDescription": "Me%20ayudas%20con%20la%20información%20de%20instalación%20de%20los%20Cercos%20Electrónicos!.",
@@ -26,7 +26,7 @@
     },
     {
       "title": "Televisión por Cable",
-      "imagen": "/../src/assets/0a4-img.avif",
+      "imagen": "/service_n004.avif",
       "imgDescription": "Imagen del los canales de televisión por cable",
       "description": "Contamos con el servicio de TV por cable con más 65 canales que abarca entretenimiento, deporte, noticias, documentales y mucho más.",
       "urlDescription": "Me%20ayudas%20con%20los%20planes%20de%20TV%20por%20cable!.",
@@ -34,7 +34,7 @@
     },
     {
       "title": "Internet Fibra Óptica",
-      "imagen": "/../src/assets/0a5-img.avif",
+      "imagen": "/service_n005.avif",
       "imgDescription": "Imagen del Internet Fibra Óptica",
       "description": "Navega por la red con el proveedor de internet 100% de fibra óptica que ofrece conexiones de hasta 5000 Mbps para hogares y empresas.",
       "urlDescription": "Me%20ayudas%20con%20los%20planes%20de%20Internet!.",
